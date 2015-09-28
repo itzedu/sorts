@@ -29,12 +29,3 @@ BST.prototype.add = function(val) {
     }
   }
 }
-
-
-bst = new BST();
-
-bst.add(10);
-bst.add(15);
-bst.add(7);
-
-console.log(bst.root);
