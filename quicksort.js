@@ -1,3 +1,9 @@
+function swap(array,i,j) {
+  temp = array[i];
+  array[i] = array[j];
+  array[j] = temp;
+}
+
 function quickSort(list) {
   var left = [];
   var right = [];
@@ -7,7 +13,7 @@ function quickSort(list) {
 
   // pivot is always the first element of the list
   for (var i = 1; i < list.length; i++) {
-    if (list[i] < list[0]) {
+    if (list[i] < list[0]) {      
       left.push(list[i])
     } else {
       right.push(list[i])
