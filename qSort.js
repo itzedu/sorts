@@ -32,8 +32,6 @@ var arr = [];
 for (var i = 0; i< 100; i++) {
     arr.push(Math.round(Math.random() * i))
 }
-var length = arr.length;
 
 qSort(arr);
-
 console.log(arr);
