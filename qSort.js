@@ -1,8 +1,8 @@
 //in place quicksort
 
 function qSort(array, start, end) {
-  var start = typeof start !== 'undefined' ? start : 0
-  var end = typeof end !== 'undefined' ? end : array.length
+  start = typeof start !== 'undefined' ? start : 0
+  end = typeof end !== 'undefined' ? end : array.length
   var pivot = array[start];
   var ll = start;
 
