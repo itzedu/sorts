@@ -9,7 +9,7 @@ function bubbleSort(array) {
 
   for (var i = 0; i < array.length; i++) {
     var sorted = true;
-    for (var j = 0; j < array.length - 1; j++) {
+    for (var j = 0; j < array.length - i; j++) {
       if (array[j] > array[j+1]) {
         swap(array,j,j+1);
         sorted = false;
@@ -21,4 +21,3 @@ function bubbleSort(array) {
   }
   return array
 }
-
