@@ -11,12 +11,8 @@ function radixSort(array) {
     }
   }
 
-  console.log(max);
-
   var maxLength = (function() { return max.toString().length; })();
 
-  console.log(maxLength);
-  
   for (var i = 0; i < maxLength; i++) {
     for (var j = 0; j < array.length; j++) {
       bucket[Math.floor(arr[j] / Math.pow(10, i)) % 10].push(arr[j]);
@@ -28,7 +24,6 @@ function radixSort(array) {
         newArray.push(bucket[k][z]);
       }
     }
-    console.log(newArray);
     bucket = [[],[],[],[],[],[],[],[],[],[]];
   }
   return newArray;

@@ -33,5 +33,9 @@ function merge(left, right) {
     output = output.concat(right)
   }
 
+
   return output;
 }
+
+var arr = [79, 74, 25, 14, 85, 35, 81, 69, 7, 83, 2]
+console.log(mergeSort(arr))
