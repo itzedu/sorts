@@ -1,5 +1,3 @@
-var arr = [5,213,55,2334,31,20];
-
 function radixSort(array) {
   var bucket = [[],[],[],[],[],[],[],[],[],[]];
 
@@ -11,7 +9,7 @@ function radixSort(array) {
     }
   }
 
-  var maxLength = (function() { return max.toString().length; })();
+  var maxLength = max.toString().length;
 
   for (var i = 0; i < maxLength; i++) {
     for (var j = 0; j < array.length; j++) {
@@ -19,6 +17,7 @@ function radixSort(array) {
     }    
 
     newArray = [];
+    
     for(var k = 0; k < bucket.length; k++) {
       for(var z = 0; z < bucket[k].length; z++){
         newArray.push(bucket[k][z]);
@@ -28,5 +27,5 @@ function radixSort(array) {
   }
   return newArray;
 }
-
+var arr = [79, 74, 25, 14, 85, 35, 81, 69, 7, 83]
 console.log(radixSort(arr));
