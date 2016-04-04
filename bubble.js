@@ -8,8 +8,8 @@ function bubbleSort(array) {
   var length = array.length;
   var sorted = true;
 
-  for (var i = 0; i < array.length; i++) {
-    for (var j = 1; j < array.length - i; j++) {
+  for (var i = 0; i < length; i++) {
+    for (var j = 1; j < length - i; j++) {
       if (array[j-1] > array[j]) {
         swap(array,j-1,j);
         sorted = false;
