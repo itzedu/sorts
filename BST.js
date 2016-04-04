@@ -4,29 +4,53 @@ var BST = function() {
   this.root = null;
 }
 
-BST.prototype.insert = function(val) {
+BST.prototype.insert = function(value) {
+  var newNode = new btNode(value);
   if(this.root == null) {
-    this.root = new btNode(val);
+    this.root = newNode
   } else {
     var current = this.root;
-
     while(current) {
-      if(val < current.value) {
+      if(value < current.value) {
         if(current.left) {
           current = current.left;
         } else {
-          current.left = new btNode(val);
-          break;
+          current.left = newNode;
+          return;
         }
       } else {
         if(current.right) {
           current = current.right;
         } else {
-          current.right = new btNode(val);
-          break;
+          current.right = newNode;
+          return;
         }
       }
     }
+  }
+}
+
+BST.prototype.min = function() {
+  if(this.root == null) {
+    return "List is empty";
+  } else {
+    var current = this.root
+    while(current.left) {
+      current = current.left
+    }
+    return current;
+  }
+}
+
+BST.prototype.max = function() {
+  if(this.root == null) {
+    return "List is empty";
+  } else {
+    var current = this.root
+    while(current.right) {
+      current = current.right
+    }
+    return current;
   }
 }
 
@@ -38,13 +62,33 @@ BST.prototype.inOrder = function(node) {
   }
 }
 
-myBST = new BST();
-myBST.insert(23);
-myBST.insert(45);
-myBST.insert(16);
-myBST.insert(37);
-myBST.insert(3);
-myBST.insert(99);
-myBST.insert(22);
+BST.prototype.size = function() {
+  if(this.root == null) {
+    return 0;
+  }
+  return _size(this.root);
+}
 
-myBST.inOrder(myBST.root);
+function _size(root) {
+  var count = 1;
+  if(root.left == null && root.right == null) {
+    return count;
+  } else {
+    return count + _size(root.left) + _size(root.right);
+  }
+}
+
+
+myBST = new BST();
+myBST.insert(8);
+myBST.insert(3);
+myBST.insert(10);
+myBST.insert(1);
+myBST.insert(6);
+myBST.insert(4);
+myBST.insert(7);
+myBST.insert(14);
+myBST.insert(13);
+
+var c = myBST.size();
+console.log(c);

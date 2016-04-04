@@ -1,5 +1,5 @@
 function swap(array,i,j) {
-  temp = array[i];
+  var temp = array[i];
   array[i] = array[j];
   array[j] = temp;
 }
@@ -9,9 +9,9 @@ function bubbleSort(array) {
   var sorted = true;
 
   for (var i = 0; i < array.length; i++) {
-    for (var j = 0; j < array.length - i; j++) {
-      if (array[j] > array[j+1]) {
-        swap(array,j,j+1);
+    for (var j = 1; j < array.length - i; j++) {
+      if (array[j-1] > array[j]) {
+        swap(array,j-1,j);
         sorted = false;
       }
     }

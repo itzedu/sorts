@@ -7,6 +7,7 @@ function swap(array,i,j) {
 function quickSort(list) {
   var left = [];
   var right = [];
+  
   if (list.length < 2) {
     return list;
   }
