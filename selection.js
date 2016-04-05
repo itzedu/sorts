@@ -5,17 +5,21 @@ function swap(array,i,j) {
 }
 
 
-function selectionSort(array) {
-  var length = array.length;
+function selectionSort(arr) {
+  var length = arr.length;
+  var min;
   for (var i = 0; i < length; i++) {
-    var min = array[i], index = i; // if min found in the unsorted portion of the array, save the index to be swapped
+    min = i; // if min found in the unsorted portion of the arr, save the index to be swapped
     for (var j = i + 1; j < length; j++) {
-      if (min > array[j]) {
-        index = j;
-        min = array[j];
+      if (arr[min] > arr[j]) {
+        min = j;
       }
     }
-    swap(array,i,index)
+    swap(arr,i,min);
   }
-  return array;
+  return arr;
 }
+
+console.log(selectionSort([79, 74, 25, 14, 85, 35, 81, 69, 7, 83, 2]));
+console.log(selectionSort([1,2,3,4,5,6,7,8,9]));
+console.log(selectionSort([9,8,7,6,5,4,3,2,1]));
