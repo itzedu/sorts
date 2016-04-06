@@ -3,7 +3,7 @@ function insertionSort(arr) {
 
   for (var i = 1; i < length; i++) { // outer loop represents the unsorted portion of the array
     var element = arr[i]; // element to be inserted
-    var index = i; // represent where the element is going to be inserted to
+    var index = i; // represents where the element is going to be inserted at
 
     for (var j = i - 1; j > -1; j--) { // innner loop represents the sorted portion of the array
       if (arr[j] > element) {
