@@ -1,4 +1,6 @@
 function qSort(array, start, end) {
+  var temp;
+  var temp1;
   start = typeof start !== 'undefined' ? start : 0
   end = typeof end !== 'undefined' ? end : array.length
   var pivot = array[start];
@@ -11,13 +13,13 @@ function qSort(array, start, end) {
   for(var i = start+1; i < end; i++) {
     if (array[i] < pivot) {
       last++;
-      var temp = array[i];
+      temp = array[i];
       array[i] = array[last];
       array[last] = temp;
     }
   }
 
-  var temp1 = array[start];
+  temp1 = array[start];
   array[start] = array[last];
   array[last] = temp1;
 
