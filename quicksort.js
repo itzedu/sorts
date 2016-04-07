@@ -1,9 +1,3 @@
-function swap(array,i,j) {
-  temp = array[i];
-  array[i] = array[j];
-  array[j] = temp;
-}
-
 function quickSort(list) {
   var left = [];
   var right = [];
@@ -24,11 +18,6 @@ function quickSort(list) {
   return quickSort(left).concat(list[0]).concat(quickSort(right));
 }
 
-//test array
-var a = [];
-for (var i = 0; i < 10; ++i) {
-   a[i] = Math.floor((Math.random()*100)+1);
-}
-
-console.log(a)
-console.log(quickSort(a))
+console.log(quickSort([79, 74, 25, 14, 85, 35, 81, 69, 7, 83, 2]));
+console.log(quickSort([1,2,3,4,5,6,7,8,9]));
+console.log(quickSort([9,8,7,6,5,4,3,2,1]));
