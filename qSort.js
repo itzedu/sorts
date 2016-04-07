@@ -1,5 +1,3 @@
-//in place quicksort
-
 function qSort(array, start, end) {
   start = typeof start !== 'undefined' ? start : 0
   end = typeof end !== 'undefined' ? end : array.length
@@ -27,11 +25,14 @@ function qSort(array, start, end) {
   qSort(array, ll+1, end);
 }
 
+array = [79, 74, 25, 14, 85, 35, 81, 69, 7, 83, 2];
+qSort(array);
+console.log(array);
 
-var arr = [];
-for (var i = 0; i< 100; i++) {
-    arr.push(Math.round(Math.random() * i))
-}
+bigOmega = [1,2,3,4,5,6,7,8,9];
+qSort(bigOmega);
+console.log(bigOmega);
 
-qSort(arr);
-console.log(arr);
+bigO = [9,8,7,6,5,4,3,2,1];
+qSort(bigO);
+console.log(bigO);

@@ -1,5 +1,5 @@
 function quickSort(list) {
-  var length = list.length
+  var length = list.length;
   var left = [];
   var right = [];
   
@@ -10,9 +10,9 @@ function quickSort(list) {
   // pivot is always the first element of the list
   for (var i = 1; i < length; i++) {
     if (list[i] < list[0]) {      
-      left.push(list[i])
+      left.push(list[i]);
     } else {
-      right.push(list[i])
+      right.push(list[i]);
     }
   }
 
