@@ -2,27 +2,27 @@ function qSort(array, start, end) {
   start = typeof start !== 'undefined' ? start : 0
   end = typeof end !== 'undefined' ? end : array.length
   var pivot = array[start];
-  var ll = start;
-
-  for(var i = start+1; i < end; i++) {
-    if (array[i] < pivot) {
-      ll++;
-      var temp = array[i];
-      array[i] = array[ll];
-      array[ll] = temp;
-    }
-  }
-
-  var temp1 = array[start];
-  array[start] = array[ll];
-  array[ll] = temp1;
+  var last = start;
 
   if((end-start) < 2) {
     return;
   }
 
-  qSort(array, start, ll);
-  qSort(array, ll+1, end);
+  for(var i = start+1; i < end; i++) {
+    if (array[i] < pivot) {
+      last++;
+      var temp = array[i];
+      array[i] = array[last];
+      array[last] = temp;
+    }
+  }
+
+  var temp1 = array[start];
+  array[start] = array[last];
+  array[last] = temp1;
+
+  qSort(array, start, last);
+  qSort(array, last+1, end);
 }
 
 array = [79, 74, 25, 14, 85, 35, 81, 69, 7, 83, 2];
