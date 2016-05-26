@@ -2,7 +2,7 @@ function mergeSort(array) {
   var middle = Math.floor(array.length/2);
 
   if (array.length < 2) {
-    return array
+    return array;
   }
 
   var left = array.slice(0, middle);
@@ -33,9 +33,9 @@ function merge(left, right) {
     output = output.concat(right)
   }
 
-
   return output;
 }
 
-var arr = [79, 74, 25, 14, 85, 35, 81, 69, 7, 83, 2]
-console.log(mergeSort(arr))
+console.log(mergeSort([79, 74, 25, 14, 85, 35, 81, 69, 7, 83, 2]));
+console.log(mergeSort([1,2,3,4,5,6,7,8,9]));
+console.log(mergeSort([9,8,7,6,5,4,3,2,1]));

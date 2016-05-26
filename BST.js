@@ -7,24 +7,25 @@ var BST = function() {
 BST.prototype.insert = function(value) {
   var newNode = new btNode(value);
   if(this.root == null) {
-    this.root = newNode
-  } else {
-    var current = this.root;
-    while(current) {
-      if(value < current.value) {
-        if(current.left) {
-          current = current.left;
-        } else {
-          current.left = newNode;
-          return;
-        }
+    this.root = newNode;
+    return;
+  }
+
+  var current = this.root;
+  while(current) {
+    if(value < current.value) {
+      if(current.left) {
+        current = current.left;
       } else {
-        if(current.right) {
-          current = current.right;
-        } else {
-          current.right = newNode;
-          return;
-        }
+        current.left = newNode;
+        return;
+      }
+    } else {
+      if(current.right) {
+        current = current.right;
+      } else {
+        current.right = newNode;
+        return;
       }
     }
   }

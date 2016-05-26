@@ -7,13 +7,9 @@ function insertionSort(arr) {
     element = arr[i];
     index = i;
 
-    for (var j = i - 1; j > -1; j--) { // innner loop represents the sorted portion of the array
-      if (arr[j] > element) {
-        arr[j+1] = arr[j];
-        index = j;
-      } else {
-        break;
-      }
+    for (var j = i - 1; j > -1 && element < arr[j]; j--) { // innner loop represents the sorted portion of the array
+      arr[j+1] = arr[j];
+      index = j;
     }
     arr[index] = element;
   }
